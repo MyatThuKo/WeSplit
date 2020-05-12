@@ -48,10 +48,12 @@ struct ContentView: View {
                 
                 Section(header: Text("Total Amount After Tips")) {
                     Text("$\(totalPerPerson * Double(Int(numberOfPeople) ?? 0 + 2), specifier: "%.2f")")
+                        .foregroundColor(tipPercentages[tipPercentage] == 0 ? .red : .black)
                 }
                 
                 Section(header: Text("Amount Per Person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
+                    .foregroundColor(tipPercentages[tipPercentage] == 0 ? .red : .black)
                 }
             }
             .navigationBarTitle("WeSplit")
